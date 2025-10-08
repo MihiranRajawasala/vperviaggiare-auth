@@ -1,0 +1,8 @@
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+RUN npm install --global nodemon
+COPY . .
+EXPOSE 4000
+CMD ["nodemon", "--watch", ".", "--ext", "js,json", "--exec", "node", "server.js"]

@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  auth:
+    container_name: vperviaggiare-auth
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: vperviaggiare-auth:dev
+    env_file:
+      - .env
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
