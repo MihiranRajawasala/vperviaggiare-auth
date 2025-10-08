@@ -79,3 +79,5 @@ app.get('/me', authRequired, (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`🚀 Server attivo su http://localhost:${PORT}`));
+
+console.log("MONGO_URI:", process.env.MONGO_URI);
